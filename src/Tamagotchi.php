@@ -4,15 +4,18 @@ class Tamagotchi
     private $name;
     private $food;
     private $rest;
+    private $time;
 
 
-    function __construct($tam_name, $tam_food="25", $tam_rest="25")
+    function __construct($tam_name)
     {
         $this->name = $tam_name;
-        $this->food = $tam_food;
-        $this->rest = $tam_rest;
+        $this->time = 0;
+        $this->food = rand (2, 10);
+        $this->rest = rand (2, 10);
     }
 
+    // Getters & Setter
     function setName($new_name)
     {
         $this->name = $new_name;
@@ -37,6 +40,36 @@ class Tamagotchi
     {
         array_push($_SESSION['list_of_tamagotchis'], $this);
     }
+
+    // Functions
+    function time()
+    {
+
+
+    }
+
+    function loseFood()
+    {
+
+    }
+
+    function loseRest()
+    {
+
+    }
+
+
+
+
+
+
+
+    function feed()
+    {
+        $this->food += rand (1,5);
+    }
+
+
 
     static function getAll()
     {
